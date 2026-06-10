@@ -1,0 +1,111 @@
+@font-face {
+    font-family: apple;
+    src: url(fonts/SFPRODISPLAYREGULAR.OTF);
+}
+@font-face {
+    font-family: applemed;
+    src: url(fonts/SFPRODISPLAYMEDIUM.OTF);
+}
+@font-face {
+    font-family: applethin;
+    src: url(fonts/SFPRODISPLAYTHINITALIC.OTF);
+}
+a{
+    text-decoration: none;
+    color: blanchedalmond;
+}
+html{
+    background-color: #481813;
+    overflow-x: hidden;
+}
+body{
+    font-family: apple;
+    margin: 0;
+}
+.navbar{
+    justify-self: center;
+    display:flex;
+    gap: 10px;
+}
+.nr{
+     color: #c6aeaa;
+}
+.navbar ul{
+    color: blanchedalmond;;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+}
+.navbar li{
+    float: left;
+    margin: 25px;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+.navbar li:hover{
+    background-color: rgba(0, 0, 0, 0.43);
+    color: #c6aeaa;
+     transform: translateY(-3px)
+}
+.e{
+    height: 420px;
+    width: 300px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+    0 5px 20px rgba(0, 0, 0, 0.442),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+.big{
+    display: flex;
+    gap:15px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    
+}
+.e h1{
+    color: blanchedalmond;
+    text-align: center;
+    font-family: applemed;
+    margin-bottom: 7px;
+    
+}
+.e p{
+    color: blanchedalmond;
+    text-align: center;
+    margin: 0;
+    font-size: 12px;
+}
+.e button{
+    background-color: #481813;
+    text-align: center;
+    font-family: apple;
+    border-radius: 3px;
+    color: blanchedalmond;
+    border: 0;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 100px;
+    height: 25px;
+    margin-left: 100px;
+    margin-top: 14px;
+}
+@keyframes slideDownNav {
+    0% { transform: translateY(-100%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+@keyframes slideUpNav {
+    0% { transform: translateY(100%); opacity: 0;filter: blur(10px)}
+    100% {transform: translateY(0); opacity: 1;}
+}
+.navbar{
+    animation: slideDownNav 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+.big{animation: slideUpNav 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+
+}

@@ -1,0 +1,194 @@
+@font-face {
+    font-family: apple;
+    src: url(fonts/SFPRODISPLAYREGULAR.OTF);
+}
+@font-face {
+    font-family: applemed;
+    src: url(fonts/SFPRODISPLAYMEDIUM.OTF);
+}
+@font-face {
+    font-family: applethin;
+    src: url(fonts/SFPRODISPLAYTHINITALIC.OTF);
+}
+
+a {
+    text-decoration: none;
+    color: blanchedalmond;
+}
+
+html {
+    background-color: #481813;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: apple;
+    margin: 0;
+}
+
+/* =========================================
+   ANIMAȚII (Keyframes)
+   ========================================= */
+
+/* Bara de navigare cade de sus */
+@keyframes slideDownNav {
+    0% { transform: translateY(-100%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Containerul principal face un pop-up de jos */
+@keyframes popUpSlide {
+    0% { transform: translateY(50px) scale(0.95); opacity: 0; }
+    100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* Imaginea din stânga zboară și se rotește */
+@keyframes flyInLeft {
+    0% { transform: translateX(-150%) rotate(-45deg); opacity: 0; }
+    100% { transform: translateX(0) rotate(-9deg); opacity: 1; }
+}
+
+/* Imaginea din dreapta zboară și se rotește */
+@keyframes flyInRight {
+    0% { transform: translateX(150%) rotate(45deg); opacity: 0; }
+    100% { transform: translateX(0) rotate(9deg); opacity: 1; }
+}
+
+/* =========================================
+   STILURI COMPONENTE
+   ========================================= */
+
+.navbar {
+    justify-self: center;
+    display: flex;
+    gap: 10px;
+    /* Aplicare animație */
+    animation: slideDownNav 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.nr {
+    color: #c6aeaa;
+}
+
+.navbar ul {
+    color: blanchedalmond;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navbar li {
+    float: left;
+    margin: 25px;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.navbar li:hover {
+    background-color: rgba(0, 0, 0, 0.43);
+    color: #c6aeaa;
+    transform: translateY(-3px); /* Un mic efect de ridicare la hover */
+}
+
+.slide1 {
+    width: 1400px;
+    height: 600px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+    0 5px 20px rgba(0, 0, 0, 0.442),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    align-self: center;
+    align-content: center;
+    justify-self: center;
+    justify-content: center;
+    text-align: center;
+    color: blanchedalmond;
+    background-color: #3c130e;
+    position: relative;
+    opacity: 0; /* Stă ascuns până începe animația */
+    animation: popUpSlide 1s cubic-bezier(0.25, 1, 0.5, 1) 0.3s forwards;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+}
+
+.slide1 h1 {
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.slide1 p {
+    font-family: apple;
+}
+
+.filip {
+    top: -50px;
+    left: -50px;
+    position: absolute;
+    width: 15%;
+    opacity: 0;
+    animation: flyInLeft 1.2s cubic-bezier(0.25, 1, 0.5, 1) 0.7s forwards;
+}
+
+.cpp {
+    position: absolute;
+    width: 25%;
+    top: 440px;
+    right: -120px;
+    opacity: 0;
+    animation: flyInRight 1.2s cubic-bezier(0.25, 1, 0.5, 1) 0.9s forwards;
+}
+.hz{
+    align-self: center;
+    justify-self: center;
+    font-size: 20px;
+    width: 700px;
+}
+.slide1 pre{
+    overflow-x: auto;
+    text-align: left;
+    justify-self: center;
+     border: 1px solid rgba(255, 255, 255, 0.3);
+     padding: 20px;
+     border-radius: 15px;
+}
+.hz1{
+    width: 800px;
+    justify-self: center;
+}
+/* Stil pentru slide-ul text cu liste */
+.slide-text {
+    text-align: left;          /* Aliniem textul la stânga ca să fie ușor de citit */
+    padding: 40px 60px;        /* Spațiu în interior ca să nu se lipească textul de margini */
+    box-sizing: border-box;    /* Să nu se lărgească slide-ul din cauza padding-ului */
+}
+
+.slide-text h3 {
+    font-size: 45px;
+    text-align: center;        /* Doar titlul rămâne pe centru */
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: #ffdcb5;            /* O nuanță un pic mai deschisă pentru contrast */
+}
+
+.slide-text p {
+    font-size: 26px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.slide-text ul {
+    margin-bottom: 25px;
+    padding-left: 30px;        /* Spațiu pentru buline */
+}
+
+.slide-text li {
+    font-size: 20px;
+    line-height: 1.6;          /* Spațiere mai aerisită între rânduri */
+    margin-bottom: 12px;
+    list-style-type: disc;     /* Buline standard, rotunde */
+}
